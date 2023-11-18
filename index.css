@@ -19,6 +19,11 @@ main {
   height: 100vh;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
+}
+
+input {
+  font-family: "Roboto", sans-serif;
 }
 
 strong {
@@ -59,6 +64,14 @@ h4 {
   margin: 0;
 }
 
+.info {
+  color: #5f5f5f;
+}
+
+.success {
+  color: #10a61a;
+}
+
 .danger-outline {
   color: red;
   border: 1px solid red;
@@ -92,6 +105,7 @@ h4 {
   padding-left: 100px;
   padding-right: 100px;
   gap: 20px;
+  height: 50px;
 }
 
 .navbar__logo {
@@ -179,10 +193,75 @@ button i {
   outline: none;
 }
 
+.main-content {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100% - 60px);
+  padding: 0;
+  margin: 0;
+}
+
+.main-content__title {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  padding-left: 50px;
+  width: 100%;
+  gap: 20px;
+}
+
+.title__title-edit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+}
+
+.title__title-edit input {
+  border: 1px solid #e5e5e5;
+  background-color: transparent;
+  font-size: 25px;
+  font-weight: 700;
+  color: #4a4a4a;
+  width: 100%;
+  border-radius: 10px;
+  box-sizing: border-box; /* Incluye el borde y el relleno en el ancho total */
+}
+
+.title__title-edit i {
+  font-size: 20px;
+}
+
+.title__showing-time-edit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title__showing-time-edit input {
+  border: 1px solid #e5e5e5;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 700;
+  color: #10a61a;
+  width: auto;
+  border-radius: 10px;
+}
+
+.title__showing-time-edit i {
+  font-size: 20px;
+}
+
+.main-content__title strong {
+  color: #0e993a;
+  font-size: 20px;
+}
+
 .filter-container {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  height: calc(100vh - 40px);
 }
 
 .filter-container-sub {
@@ -208,6 +287,8 @@ button i {
 .zone-options {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-right: 50px;
   gap: 20px;
 }
 
@@ -217,14 +298,12 @@ button i {
   align-items: flex-start;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 20px;
-  height: 75vh;
+  height: 100%;
 }
 
 .map {
   width: calc(100% - 365px);
-  height: 100%;
-  min-height: 60vh;
+  height: calc(100vh - 85px);
   background-color: #4a4a4a;
   border-radius: 20px;
 }
@@ -233,12 +312,12 @@ button i {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 350px;
-  height: 100%;
+  width: 370px;
+  height: calc(100vh - 85px);
   border-radius: 20px;
   border: 1px solid #dedede;
-  padding: 10px;
   position: relative; /* Agregamos posición relativa al contenedor */
+  overflow: hidden;
 }
 
 .property-list__header {
@@ -255,14 +334,30 @@ button i {
   padding: 10px;
 }
 
+.property-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.property-title button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.property-title button i {
+  font-size: 20px;
+}
+
 .property-list__properties {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
-  gap: 20px;
-  padding: 20px;
+  padding: 10px;
   overflow-y: scroll;
 }
 
@@ -295,6 +390,13 @@ button i {
   border-radius: 10px;
 }
 
+.dragable-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
 .property-card {
   display: flex;
   align-items: center;
@@ -312,13 +414,30 @@ button i {
 }
 
 .property-card__img {
-  width: 80px;
+  width: 90px;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: #e7e7e7;
   border-radius: 10px;
+}
+
+.property-card__img .time {
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.estimated-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .card-icon {
@@ -339,6 +458,7 @@ button i {
   justify-content: center;
   max-width: 160px; /* Se establece un ancho máximo para el contenedor de la dirección */
   overflow: hidden; /* Se agrega un desbordamiento oculto para manejar texto largo */
+  gap: 5px;
 }
 
 .property-buttons {
@@ -382,9 +502,57 @@ button i {
   display: none; /* Por defecto, el botón está oculto */
 }
 
+.fully-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000000; /* Ajusta el índice z según sea necesario para que esté encima de otros elementos */
+}
+
+.add-property-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
 /* Media query Main Content */
 
 @media screen and (max-width: 950px) {
+  .main-content__title {
+    flex-direction: column;
+    height: 100px;
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .title__title-edit {
+    width: 100%;
+  }
+
+  .filter-container {
+    height: calc(100vh - 160px);
+  }
+
+  .map {
+    height: calc(100vh - 160px);
+  }
+
+  .property-list {
+    height: calc(100vh - 160px);
+  }
 
   .button-show-filter {
     display: block; /* Muestra el botón cuando la pantalla es menor a 700px */
@@ -403,47 +571,52 @@ button i {
   .header-container {
     display: none;
   }
+
+  .active-filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: calc(100% - 60px); /* Ajusta la altura según tus necesidades */
+    border-radius: 20px;
+    padding: 10px;
+    position: absolute;
+    top: 60px; /* Ajusta la posición superior según tus necesidades */
+    left: 10px;
+    background-color: #fff;
+  }
+
+  .active-filters .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 }
 
 @media screen and (max-width: 700px) {
   .button-show-list {
     display: block; /* Muestra el botón cuando la pantalla es menor a 700px */
     position: absolute;
-    top: 60px; /* Ajusta la posición superior según tus necesidades */
+    top: 160px; /* Ajusta la posición superior según tus necesidades */
     right: 0px; /* Ajusta la posición izquierda según tus necesidades */
     z-index: 1000; /* Ajusta el índice z según sea necesario para que esté encima de otros elementos */
     border: 2px solid red;
     border-radius: 10px;
   }
 
-  .filter-container-sub {
-    display: none;
-  }
-
-  .header-container {
-    display: none;
-  }
-
-  .filter-container {
-    height: 100%;
-  }
-
   .main-container {
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
   }
 
   .property-list {
-    display: none;
+    display: none; /* Mueve el contenedor a la derecha */
   }
 
   .map {
-    width: 95%;
-    height: 95%;
-    border-radius: 0;
+    height: calc(100vh - 160px); /* Ajusta la altura según tus necesidades */
+    width: 100%;
+    padding: 0%;
   }
 
   .active {
@@ -451,12 +624,12 @@ button i {
     flex-direction: column;
     align-items: center;
     width: 350px;
-    height: calc(100% - 60px); /* Ajusta la altura según tus necesidades */
+    height: calc(100% - 200px); /* Ajusta la altura según tus necesidades */
     border-radius: 20px;
     border: 1px solid #dedede;
     padding: 10px;
     position: absolute;
-    top: 60px; /* Ajusta la posición superior según tus necesidades */
+    top: 180px; /* Ajusta la posición superior según tus necesidades */
     right: 10px;
     background-color: #fff;
   }

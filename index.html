@@ -91,7 +91,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Buscar" />
           </div>
-          <button>Login</button>
+          <button>Logout</button>
           <div class="option-select">
             <button>
               ES
@@ -100,204 +100,350 @@
           </div>
         </div>
       </nav>
-      <div class="filter-container">
-        <div class="filter-container-sub">
-          Esta es tu <strong> zona de búsqueda.</strong> Elige Filtros, dibuja
-          sobre el mapa y guárdala
-        </div>
-        <button class="button-show-filter" id="button-show-filter">
-          <i class="fa-solid fa-filter"></i>
-        </button>
-        <div class="header-container">
-          <div class="filters">
-            <div class="option-select">
-              <button>
-                Casas y Deptos
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-            </div>
-            <div class="option-select">
-              <button>
-                Arriendo
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-            </div>
-            <div class="option-select">
-              <button>
-                Precio
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-            </div>
-            <div class="option-select">
-              <button>
-                Habitaciones
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-            </div>
+      <div class="main-content">
+        <div class="main-content__title">
+          <div class="title__title-edit">
+            <i class="fa-solid fa-edit"></i>
+            <input type="text" placeholder="Titulo-JS" />
           </div>
-          <button>Mas filtros</button>
-          <div class="zone-options">
-            <button class="danger-outline">Guardar zona</button>
-            <button>Ver mis zonas</button>
+          <div class="title__showing-time-edit">
+            <i class="fa-solid fa-edit"></i>
+            <h2>Showing time</h2>
+            <!-- Input con hora por defecto -->
+            <input type="time" value="10:00" />
           </div>
         </div>
-        <div class="main-container">
-          <div class="map" id="map"></div>
-          <button class="button-show-list" id="button-show-list">
-            <i class="fa-solid fa-bars-staggered"></i>
-          </button>
-          <div class="property-list" id="property-list">
-            <div class="property-list__header">
-              <div class="property-list__header__information">
-                <h1>Propiedades</h1>
-                <h3>5 propiedades por visitar</h3>
+        <div class="filter-container">
+          <div class="main-container">
+            <div class="map" id="map"></div>
+            <button class="button-show-list" id="button-show-list">
+              <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+            <div class="property-list" id="property-list">
+              <div class="property-list__header">
+                <div class="property-list__header__information">
+                  <div class="property-title">
+                    <h1>Propiedades</h1>
+                    <button class="add-outline">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+
+                  <h3>5 propiedades por visitar</h3>
+                </div>
+              </div>
+              <div class="property-list__properties">
+                <div class="dragable-card">
+                  <div class="property-card">
+                    <div class="property-card__img">
+                      <i class="fa-solid fa-house card-icon"></i>
+                      <div class="estimated-time">
+                        <span>E.A.T.:</span>
+                        <span class="time"
+                          ><i class="fa-solid fa-clock"></i> 12:00</span
+                        >
+                      </div>
+                    </div>
+                    <div class="property-card__data">
+                      <div class="property-card__info">
+                        <span style="font-size: large">Casa 1</span>
+                        <span>Direccion</span>
+                        <span>Fecha visita</span>
+                        <span>Visit duration</span>
+                      </div>
+                      <div class="property-buttons">
+                        <button class="danger-outline delete-button">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="edit-outline edit-button">
+                          <i class="fa-solid fa-edit"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dragable-card">
+                  <div class="property-card">
+                    <div class="property-card__img">
+                      <i class="fa-solid fa-house card-icon"></i>
+                      <div class="estimated-time">
+                        <span>E.A.T.:</span>
+                        <span class="time"
+                          ><i class="fa-solid fa-clock"></i> 12:00</span
+                        >
+                      </div>
+                    </div>
+                    <div class="property-card__data">
+                      <div class="property-card__info">
+                        <span style="font-size: large">Casa 1</span>
+                        <span class="info">Direccion</span>
+                        <span class="info">Fecha visita</span>
+                        <span class="info">Visit duration</span>
+                      </div>
+                      <div class="property-buttons">
+                        <button class="danger-outline delete-button">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="edit-outline edit-button">
+                          <i class="fa-solid fa-edit"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="dragable-card">
+                  <div class="property-card">
+                    <div class="property-card__img">
+                      <i class="fa-solid fa-house card-icon"></i>
+                      <div class="estimated-time">
+                        <span>E.A.T.:</span>
+                        <span class="time"
+                          ><i class="fa-solid fa-clock"></i> 12:00</span
+                        >
+                      </div>
+                    </div>
+                    <div class="property-card__data">
+                      <div class="property-card__info">
+                        <span style="font-size: large">Casa 1</span>
+                        <span>Direccion</span>
+                        <span>Fecha visita</span>
+                        <span>Visit duration</span>
+                      </div>
+                      <div class="property-buttons">
+                        <button class="danger-outline delete-button">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="edit-outline edit-button">
+                          <i class="fa-solid fa-edit"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="dragable-card">
+                  <div class="property-card">
+                    <div class="property-card__img">
+                      <i class="fa-solid fa-house card-icon"></i>
+                      <div class="estimated-time">
+                        <span>E.A.T.:</span>
+                        <span class="time"
+                          ><i class="fa-solid fa-clock"></i> 12:00</span
+                        >
+                      </div>
+                    </div>
+                    <div class="property-card__data">
+                      <div class="property-card__info">
+                        <span style="font-size: large">Casa 1</span>
+                        <span>Direccion</span>
+                        <span>Fecha visita</span>
+                        <span>Visit duration</span>
+                      </div>
+                      <div class="property-buttons">
+                        <button class="danger-outline delete-button">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="edit-outline edit-button">
+                          <i class="fa-solid fa-edit"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="dragable-card">
+                  <div class="property-card">
+                    <div class="property-card__img">
+                      <i class="fa-solid fa-house card-icon"></i>
+                      <div class="estimated-time">
+                        <span>E.A.T.:</span>
+                        <span class="time"
+                          ><i class="fa-solid fa-clock"></i> 12:00</span
+                        >
+                      </div>
+                    </div>
+                    <div class="property-card__data">
+                      <div class="property-card__info">
+                        <span style="font-size: large">Casa 1</span>
+                        <span>Direccion</span>
+                        <span>Fecha visita</span>
+                        <span>Visit duration</span>
+                      </div>
+                      <div class="property-buttons">
+                        <button class="danger-outline delete-button">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="edit-outline edit-button">
+                          <i class="fa-solid fa-edit"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="dragable-card">
+                  <div class="property-card">
+                    <div class="property-card__img">
+                      <i class="fa-solid fa-house card-icon"></i>
+                      <div class="estimated-time">
+                        <span>E.A.T.:</span>
+                        <span class="time"
+                          ><i class="fa-solid fa-clock"></i> 12:00</span
+                        >
+                      </div>
+                    </div>
+                    <div class="property-card__data">
+                      <div class="property-card__info">
+                        <span style="font-size: large">Casa 1</span>
+                        <span>Direccion</span>
+                        <span>Fecha visita</span>
+                        <span>Visit duration</span>
+                      </div>
+                      <div class="property-buttons">
+                        <button class="danger-outline delete-button">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="edit-outline edit-button">
+                          <i class="fa-solid fa-edit"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="dragable-card">
+                  <div class="property-card">
+                    <div class="property-card__img">
+                      <i class="fa-solid fa-house card-icon"></i>
+                      <div class="estimated-time">
+                        <span>E.A.T.:</span>
+                        <span class="time"
+                          ><i class="fa-solid fa-clock"></i> 12:00</span
+                        >
+                      </div>
+                    </div>
+                    <div class="property-card__data">
+                      <div class="property-card__info">
+                        <span style="font-size: large">Casa 1</span>
+                        <span>Direccion</span>
+                        <span>Fecha visita</span>
+                        <span>Visit duration</span>
+                      </div>
+                      <div class="property-buttons">
+                        <button class="danger-outline delete-button">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="edit-outline edit-button">
+                          <i class="fa-solid fa-edit"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="dragable-card">
+                  <div class="property-card">
+                    <div class="property-card__img">
+                      <i class="fa-solid fa-house card-icon"></i>
+                      <div class="estimated-time">
+                        <span>E.A.T.:</span>
+                        <span class="time"
+                          ><i class="fa-solid fa-clock"></i> 12:00</span
+                        >
+                      </div>
+                    </div>
+                    <div class="property-card__data">
+                      <div class="property-card__info">
+                        <span style="font-size: large">Casa 1</span>
+                        <span>Direccion</span>
+                        <span>Fecha visita</span>
+                        <span>Visit duration</span>
+                      </div>
+                      <div class="property-buttons">
+                        <button class="danger-outline delete-button">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="edit-outline edit-button">
+                          <i class="fa-solid fa-edit"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
               </div>
             </div>
-            <div class="property-list__properties">
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-house card-icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="fully-modal">
+        <div class="add-property-modal">
+          <div class="add-property-modal__header">
+            <h1>Agregar propiedad</h1>
+            <button class="close-modal">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="add-property-modal__body">
+            <div class="add-property-modal__body__form">
+              <div class="form__title">
+                <h2>Información de la propiedad</h2>
+              </div>
+              <div class="form__inputs">
+                <div class="form__inputs__input">
+                  <label for="property-name">Nombre de la propiedad</label>
+                  <input
+                    type="text"
+                    name="property-name"
+                    id="property-name"
+                    placeholder="Nombre de la propiedad"
+                  />
                 </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large;">Casa 1</span>
-                    <span>Direccion</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="danger-outline delete-button"><i class="fa-solid fa-trash"></i></button>
-                    <button class="edit-outline edit-button"><i class="fa-solid fa-edit"></i></button>
-                  </div>
+                <div class="form__inputs__input">
+                  <label for="property-address">Dirección</label>
+                  <input
+                    type="text"
+                    name="property-address"
+                    id="property-address"
+                    placeholder="Dirección"
+                  />
+                </div>
+                <div class="form__inputs__input">
+                  <label for="property-date">Fecha de visita</label>
+                  <input
+                    type="date"
+                    name="property-date"
+                    id="property-date"
+                    placeholder="Fecha de visita"
+                  />
+                </div>
+                <div class="form__inputs__input">
+                  <label for="property-time">Hora de visita</label>
+                  <input
+                    type="time"
+                    name="property-time"
+                    id="property-time"
+                    placeholder="Hora de visita"
+                  />
+                </div>
+                <div class="form__inputs__input">
+                  <label for="property-duration">Duración de visita</label>
+                  <input
+                    type="time"
+                    name="property-duration"
+                    id="property-duration"
+                    placeholder="Duración de visita"
+                  />
                 </div>
               </div>
-
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-building card-icon"></i>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large;">Departamento</span>
-                    <span>Calle</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="danger-outline delete-button"><i class="fa-solid fa-trash"></i></button>
-                    <button class="edit-outline edit-button"><i class="fa-solid fa-edit"></i></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-building card-icon"></i>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large;">Departamento</span>
-                    <span>Calle</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="danger-outline delete-button"><i class="fa-solid fa-trash"></i></button>
-                    <button class="edit-outline edit-button"><i class="fa-solid fa-edit"></i></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-building card-icon"></i>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large;">Departamento</span>
-                    <span>Calle</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="danger-outline delete-button"><i class="fa-solid fa-trash"></i></button>
-                    <button class="edit-outline edit-button"><i class="fa-solid fa-edit"></i></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-building card-icon"></i>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large;">Departamento</span>
-                    <span>Calle</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="danger-outline delete-button"><i class="fa-solid fa-trash"></i></button>
-                    <button class="edit-outline edit-button"><i class="fa-solid fa-edit"></i></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-building card-icon"></i>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large;">Departamento</span>
-                    <span>Calle</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="danger-outline delete-button"><i class="fa-solid fa-trash"></i></button>
-                    <button class="edit-outline edit-button"><i class="fa-solid fa-edit"></i></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-building card-icon"></i>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large;">Departamento</span>
-                    <span>Calle</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="danger-outline delete-button"><i class="fa-solid fa-trash"></i></button>
-                    <button class="edit-outline edit-button"><i class="fa-solid fa-edit"></i></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-building card-icon"></i>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large;">Departamento</span>
-                    <span>Calle</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="danger-outline delete-button"><i class="fa-solid fa-trash"></i></button>
-                    <button class="edit-outline edit-button"><i class="fa-solid fa-edit"></i></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-building card-icon"></i>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large;">Departamento</span>
-                    <span>Calle</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="danger-outline delete-button"><i class="fa-solid fa-trash"></i></button>
-                    <button class="edit-outline edit-button"><i class="fa-solid fa-edit"></i></button>
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>

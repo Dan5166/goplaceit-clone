@@ -1,0 +1,10 @@
+- Hacer pestaña de add property modal, boton add property
+- Definir restricciones de los campos de add property modal
+- Start Showing Time
+- Poder editar el titulo de la propiedad
+- Casas -Boton notas para comentarios
+- Modal de notas
+- Boton de eliminar propiedad
+- Boton check para marcar como visitada --- Alerta significativa de recalculo de hora
+
+// Navbar alto fijo para calculo componentes
