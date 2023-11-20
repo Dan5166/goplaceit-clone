@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Showlink</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="login.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -143,208 +143,24 @@
           </div>
         </div>
       </nav>
-      <div class="main-content">
-        <div class="map" id="map"></div>
-        <div class="property-list" id="property-list">
-            <button id="togglePropertyList" class="btn button-show-list"><i class="fa-solid fa-bars-staggered"></i></button>
-          <div class="property-list__header">
-            <div class="property-list__header__information">
-              <div class="property-title">
-                <h1>Propiedades</h1>
-                <button class="btn add-outline">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
-              </div>
-
-              <h3>5 propiedades por visitar</h3>
-            </div>
-          </div>
-
-          <div class="property-list__properties">
-            <div class="dragable-card">
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-house card-icon"></i>
-                  <div class="estimated-time">
-                    <span>E.A.T.:</span>
-                    <span class="time"
-                      ><i class="fa-solid fa-clock"></i> 12:00</span
-                    >
-                  </div>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large">Property name </span>
-                    <span>Address: ---</span>
-                    <span style="color: rgb(193, 101, 62)">Date: ---</span>
-                    <span>Visit duration: ---</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="btn danger-outline delete-button">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                    <button class="btn edit-outline edit-button">
-                      <i class="fa-solid fa-edit"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="dragable-card">
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-house card-icon"></i>
-                  <div class="estimated-time">
-                    <span>E.A.T.:</span>
-                    <span class="time"
-                      ><i class="fa-solid fa-clock"></i> 12:00</span
-                    >
-                  </div>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large">Property name </span>
-                    <span>Address: ---</span>
-                    <span style="color: rgb(193, 101, 62)">Date: ---</span>
-                    <span>Visit duration: ---</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="btn danger-outline delete-button">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                    <button class="btn edit-outline edit-button">
-                      <i class="fa-solid fa-edit"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="dragable-card">
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-house card-icon"></i>
-                  <div class="estimated-time">
-                    <span>E.A.T.:</span>
-                    <span class="time"
-                      ><i class="fa-solid fa-clock"></i> 12:00</span
-                    >
-                  </div>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large">Property name </span>
-                    <span>Address: ---</span>
-                    <span style="color: rgb(193, 101, 62)">Date: ---</span>
-                    <span>Visit duration: ---</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="btn danger-outline delete-button">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                    <button class="btn edit-outline edit-button">
-                      <i class="fa-solid fa-edit"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="dragable-card">
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-house card-icon"></i>
-                  <div class="estimated-time">
-                    <span>E.A.T.:</span>
-                    <span class="time"
-                      ><i class="fa-solid fa-clock"></i> 12:00</span
-                    >
-                  </div>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large">Property name </span>
-                    <span>Address: ---</span>
-                    <span style="color: rgb(193, 101, 62)">Date: ---</span>
-                    <span>Visit duration: ---</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="btn danger-outline delete-button">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                    <button class="btn edit-outline edit-button">
-                      <i class="fa-solid fa-edit"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="dragable-card">
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-house card-icon"></i>
-                  <div class="estimated-time">
-                    <span>E.A.T.:</span>
-                    <span class="time"
-                      ><i class="fa-solid fa-clock"></i> 12:00</span
-                    >
-                  </div>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large">Property name </span>
-                    <span>Address: ---</span>
-                    <span style="color: rgb(193, 101, 62)">Date: ---</span>
-                    <span>Visit duration: ---</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="btn danger-outline delete-button">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                    <button class="btn edit-outline edit-button">
-                      <i class="fa-solid fa-edit"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="dragable-card">
-              <div class="property-card">
-                <div class="property-card__img">
-                  <i class="fa-solid fa-house card-icon"></i>
-                  <div class="estimated-time">
-                    <span>E.A.T.:</span>
-                    <span class="time"
-                      ><i class="fa-solid fa-clock"></i> 12:00</span
-                    >
-                  </div>
-                </div>
-                <div class="property-card__data">
-                  <div class="property-card__info">
-                    <span style="font-size: large">Property name </span>
-                    <span>Address: ---</span>
-                    <span style="color: rgb(193, 101, 62)">Date: ---</span>
-                    <span>Visit duration: ---</span>
-                  </div>
-                  <div class="property-buttons">
-                    <button class="btn danger-outline delete-button">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                    <button class="btn edit-outline edit-button">
-                      <i class="fa-solid fa-edit"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-          </div>
-        </div>
+      <div class="mainpage-content">
+            <nav class="sidebar" id="sidebar">
+                    <i class="fa-solid fa-chevron-left circle-show-sidebar" id="show-sidebar"></i>
+                  <ul class="sidebar-content">
+                      <li class="sidebar-content__item">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                          <p>Upcoming tasks</p>
+                      </li>
+                      <li class="sidebar-content__item">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <p>Past showings</p>
+                        </li>
+                  </ul>
+              </nav>
       </div>
+      
     </main>
-    <script src="index.js"></script>
+    <script src="mainpage.js">
+    </script>
   </body>
 </html>
