@@ -33,13 +33,12 @@ function setupHoverEffect(button, settingsContainer) {
       navbarContainer.classList.toggle("active");
     });
   }
-  
-  function showPropertyList(togglePropertyListButton, propertyList) {
-      // Toggle property-list visibility and update button text
-  togglePropertyListButton.addEventListener('click', function () {
-      propertyList.classList.toggle('active');
-      const isActive = propertyList.classList.contains('active');
-  });
+
+  function setUpSidebarShow(buttonShowSidebar, sidebar) {
+    buttonShowSidebar.addEventListener("click", function () {
+        // Agrega la clase 'active' si no la tiene, o la quita si la tiene
+        sidebar.classList.toggle("active");
+      });
   }
   
   document.addEventListener("DOMContentLoaded", function () {
@@ -55,19 +54,16 @@ function setupHoverEffect(button, settingsContainer) {
   
     const buttonShowNavbar = document.getElementById("show-navbar-links");
     const navbarContainer = document.getElementById("navbar__container");
-  
-    // Get references to relevant elements
-    const togglePropertyListButton =
-      document.getElementById("togglePropertyList");
-    const propertyList = document.querySelector(".property-list");
+
+    const buttonShowSideBar = document.getElementById("show-sidebar");
+    const sidebarContainer = document.getElementById("sidebar")
   
     // Configura el efecto hover para el primer conjunto de elementos
     setupHoverEffect(button1, settingsContainer1);
-  
     // Configura el efecto hover para el segundo conjunto de elementos
     setupHoverEffect(button2, settingsContainer2);
   
     showNavbar(buttonShowNavbar, navbarContainer);
-  
-    showPropertyList(togglePropertyListButton, propertyList);
+
+    setUpSidebarShow(buttonShowSideBar, sidebarContainer);
   });

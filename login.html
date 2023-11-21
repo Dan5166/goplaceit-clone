@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Showlink</title>
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="login-container">
+          <form action="" class="login-form">
+              <div class="login-title">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h1>Showlink</h1>
+              </div>
+                
+              <div class="field-container">
+                    <input type="mail" name="username" id="username" required/>
+                    <label for="" id="usernameLabel">Email</label>
+              </div>
+              <div class="field-container">
+                    <input type="password" name="pass" id="pass" required/>
+                    <i class="fa-solid fa-eye pass-eye" onclick="changePasswordVisibility()" id="passEye"></i>
+                    <label for="" id="passLabel">Password</label>
+              </div>
+              <button class="btn btn-primary">Login</button>
+          </form>
+      </div>
+    </main>
+    <script src="login.js">
+    </script>
+  </body>
+</html>
