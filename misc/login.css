@@ -44,11 +44,6 @@
         gap: 8px;
     }
 
-    .btn-danger {
-        color: #fff;
-        background-color: #fc0f4c;
-    }
-
     main {
         display: flex;
         flex-direction: column;
@@ -430,122 +425,34 @@
     .button-show-filter {
         display: none; /* Por defecto, el botón está oculto */
     }
-    /* Modals */
-
-    .modal {
-        display: none;
-        width: 100%;
-        height: calc(100% - 50px);
-        margin-top: 50px;
+    
+    .fully-modal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         position: fixed;
-        inset: 0;
-        background-color: rgb(56, 56, 56, 0.5);
-        z-index: 10000000000;
-        transition: all 0.3s ease;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 10000000; /* Ajusta el índice z según sea necesario para que esté encima de otros elementos */
     }
-
-    .modal.active {
+    
+    .add-property-modal {
         display: flex;
-        transition: all 0.3s ease;
-    }
-
-    .modal-container {
-        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 400px;
-        height: 500px;
-        border-radius: 20px;
-        margin: auto;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000000000;
+        height: 400px;
         background-color: #fff;
-        gap: 30px;
+        border-radius: 20px;
+        padding: 20px;
     }
 
-    .modal-container .modal-header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
 
-    .i-danger {
-        color: #fc0f4c;
-    }
-
-    .modal-container .modal-header i {
-        font-size: 40px;
-    }
-
-    .modal-container h2 {
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-    .modal-container p {
-        font-size: 16px;
-        font-weight: 400;
-        text-align: center;
-    }
-
-    .modal-container .modal-form {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .modal-form__input {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        width: 100%;
-    }
-
-    .modal-container input {
-        width: 100%;
-        height: 40px;
-        border-radius: 10px;
-        border: 1px solid #dedede;
-        padding: 10px;
-        outline: none;
-    }
-
-    .modal-container textarea {
-        width: 100%;
-        height: 100px;
-        border-radius: 10px;
-        border: 1px solid #dedede;
-        outline: none;
-        resize: none;
-        padding: 10px;
-    }
-
-    .modal-container .modal-buttons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .modal-container .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 20px;
-        width: 35px;
-        height: 35px;
-        background-color: #fc0f4c;
-        color: #ffffff;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 
 
         /* Login */
@@ -617,100 +524,64 @@
         overflow: hidden;
     }
 
-    #sidebarMenu {
-        transform: translateX(180px);
-        transition: transform 250ms ease-in-out;
-        background: #393939;
-        height: calc(100vh - 50px);
-        position: fixed;
-        top: 50px;
+    .sidebar {
+        position: absolute; /* Position the property-list */
+        top: 0;
         right: 0;
-        width: 250px;
-      }
-  
-      input[type="checkbox"]:checked ~ #sidebarMenu {
-        transform: translateX(0);
-      }
+        bottom: 0;
+        padding: 5px;
+        order: 2; /* Move property-list below map in the stacking order */
+        overflow: visible;
+        width: 60px;
+        border: 1px solid #dedede;
+        transition: transform 0.3s ease;
+    }
 
-      input[type="checkbox"]:checked ~ #sidebarMenu .sidebarContent a {
-        opacity: 1;
-        transition: opacity 0.3s ease;
-      }
-
-      input[type="checkbox"]:checked ~ #sidebarMenu .sidebarContent i {
-        transform: scale(1);
-        transition: opacity 0.3s ease;
-      }
-  
-      input[type=checkbox] {
+    .sidebar .sidebar-content__item p {
         display: none;
-      }
-  
-      label {
-        cursor: pointer;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 9999999;
-      }
-  
-      label span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #464646;
-        margin-bottom: 5px;
-      }
-  
-      .sidebarContent {
-        padding: 20px;
-        color: #fff;
-        z-index: 999999;
-      }
+    }
 
-      .sidebarContent ul {
+
+    .sidebar.active {
+        width: 300px;
+        transform: scaleY(300px);
+    }
+
+    .sidebar ul {
         list-style: none;
-        padding: 0;
-      }
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 50px;
+    }
 
-        .sidebarContent ul li {
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
-            list-style: none;
-            cursor: pointer;
-            font-size: 20px;
-        }
+    .sidebar ul li {
+        background: #dedede;
+        padding: 10px;   
+        display: flex;
+        gap: 5px; 
+        align-items: center;   
+        border-radius: 10px; 
+    }
 
-        .sidebarContent ul li:hover {
-            background-color: #464646;
-        }
+    .sidebar ul li i {
+        font-size: 20px;
+    }
 
-        .sidebarContent ul li a {
-            color: #fff;
-            text-decoration: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .sidebarContent ul li i {
-            margin-right: 10px;
-            font-size: 20px;
-        }
-    
-    
+    .sidebar ul li:hover {
+        background: #cfcfcf;
+        cursor: pointer;
+    }
 
     .circle-show-sidebar {
         position: absolute;
         top: 60px;
-        left: -32px;
+        left: -38px;
         border-top-left-radius: 100px;
         border-bottom-left-radius: 100px;
         border: 1px solid #dedede;
         background: #f0f0f0;
         padding: 10px;
-        z-index: 1000000;
     }
 
     .circle-show-sidebar:hover {
