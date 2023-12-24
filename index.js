@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const buttonShowNavbar = document.getElementById("show-navbar-links");
   const navbarContainer = document.getElementById("navbar__container");
 
+  const visitedPropertyButton = document.getElementById("check-visited-property-button");
+
   // Get references to relevant elements
   const togglePropertyListButton =
     document.getElementById("togglePropertyList");
@@ -74,11 +76,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setupModal(
     document.getElementById("add-property-button"),
+    document.getElementById("add-property-location-modal")
+  );
+
+  closeModal(
+    document.getElementById("close-add-property-location-modal-button"),
+    document.getElementById("add-property-location-modal")
+  );
+  closeModal(
+    document.getElementById("add-property-location"),
+    document.getElementById("add-property-location-modal")
+  );
+
+  setupModal(
+    document.getElementById("add-property-location"),
     document.getElementById("add-property-modal")
   );
 
   closeModal(
     document.getElementById("close-add-property-modal-button"),
+    document.getElementById("add-property-modal")
+  );
+
+  closeModal(
+    document.getElementById("add-property"),
     document.getElementById("add-property-modal")
   );
 
@@ -90,6 +111,37 @@ document.addEventListener("DOMContentLoaded", function () {
   closeModal(
     document.getElementById("close-delete-property-modal-button"),
     document.getElementById("delete-property-modal")
+  );
+
+  closeModal(
+    document.getElementById("delete-property"),
+    document.getElementById("delete-property-modal")
+  );
+
+  setupModal(
+    document.getElementById("visited-property-check"),
+    document.getElementById("property-visited-modal")
+  );
+  closeModal(
+    document.getElementById("close-check-property-modal-button"),
+    document.getElementById("property-visited-modal")
+  );
+  setupModalVisited(
+    document.getElementById("property-visited-modal"),
+    document.getElementById("check-visited-property-button"),
+    document.getElementById("visited-property-check")
+  );
+  setupModal(
+    document.getElementById("add-property-notes-button"),
+    document.getElementById("add-property-modal-notes")
+  );
+  closeModal(
+    document.getElementById("close-add-property-notes-modal-button"),
+    document.getElementById("add-property-modal-notes")
+  );
+  closeModal(
+    document.getElementById("add-property-notes"),
+    document.getElementById("add-property-modal-notes")
   );
 });
 
@@ -104,5 +156,12 @@ function setupModal(openModalButton, Modal) {
 function closeModal(closeModalButton, Modal) {
   closeModalButton.addEventListener("click", function () {
     Modal.classList.remove("active");
+  });
+}
+
+function setupModalVisited(propertyVisitedModal, checkModalButton, Modal) {
+  checkModalButton.addEventListener("click", function () {
+    Modal.classList.toggle("active");
+    propertyVisitedModal.classList.remove("active");
   });
 }

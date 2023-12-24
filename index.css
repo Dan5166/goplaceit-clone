@@ -326,6 +326,7 @@
         align-items: center;
         gap: 5px;
         width: 90%;
+        position: relative;
     }
     
     .property-card {
@@ -374,12 +375,37 @@
     .card-icon {
         font-size: 30px;
     }
-    
-    .property-card__data {
+
+    .property-card__info-header {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+    }
+
+    .visited-property-check {
+        position: absolute;
+        top:  5px;
+        right: 8px;
+        font-size: 25px;
+        padding: 5px;
+        border-radius: 8px;
+        border: 2px solid #323a32;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .visited-property-check i {
+        color: #34d126;
+        display: none;
+    }
+
+    .visited-property-check.active i {
+        display: block;
     }
     
     .property-card__info {
@@ -433,20 +459,23 @@
     /* Modals */
 
     .modal {
-        display: none;
+        transform: translateY(-100%);
         width: 100%;
-        height: calc(100% - 50px);
-        margin-top: 50px;
         position: fixed;
         inset: 0;
         background-color: rgb(56, 56, 56, 0.5);
-        z-index: 10000000000;
-        transition: all 0.3s ease;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
     }
 
     .modal.active {
+        transform: translateY(0);
         display: flex;
-        transition: all 0.3s ease;
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
     }
 
     .modal-container {
@@ -454,7 +483,6 @@
         width: 400px;
         height: 500px;
         border-radius: 20px;
-        margin: auto;
         padding: 20px;
         display: flex;
         flex-direction: column;
@@ -515,6 +543,21 @@
         outline: none;
     }
 
+    .modal-container input[type="number"] {
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid #dedede;
+        padding: 10px;
+        outline: none;
+    }
+
+    .modal-container input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
     .modal-container textarea {
         width: 100%;
         height: 100px;
@@ -545,6 +588,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .modal-map__map {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-color: #a9a1a1;
     }
 
 
@@ -617,34 +667,6 @@
         overflow: hidden;
     }
 
-    #sidebarMenu {
-        transform: translateX(180px);
-        transition: transform 250ms ease-in-out;
-        background: #393939;
-        height: calc(100vh - 50px);
-        position: fixed;
-        top: 50px;
-        right: 0;
-        width: 250px;
-      }
-  
-      input[type="checkbox"]:checked ~ #sidebarMenu {
-        transform: translateX(0);
-      }
-
-      input[type="checkbox"]:checked ~ #sidebarMenu .sidebarContent a {
-        opacity: 1;
-        transition: opacity 0.3s ease;
-      }
-
-      input[type="checkbox"]:checked ~ #sidebarMenu .sidebarContent i {
-        transform: scale(1);
-        transition: opacity 0.3s ease;
-      }
-  
-      input[type=checkbox] {
-        display: none;
-      }
   
       label {
         cursor: pointer;

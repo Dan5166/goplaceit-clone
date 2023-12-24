@@ -161,14 +161,16 @@
                   <i class="fa-solid fa-plus"></i>
                 </button>
               </div>
-
-              <h3>5 propiedades por visitar</h3>
+              <h3>Start Showing at 9:00 AM</h3>
             </div>
           </div>
 
           <div class="property-list__properties">
             <div class="dragable-card">
               <div class="property-card">
+                <div class="visited-property-check" id="visited-property-check">
+                  <i class="fa-solid fa-check"></i>
+                </div>
                 <div class="property-card__img">
                   <i class="fa-solid fa-house card-icon"></i>
                   <div class="estimated-time">
@@ -180,7 +182,9 @@
                 </div>
                 <div class="property-card__data">
                   <div class="property-card__info">
-                    <span style="font-size: large">Property name </span>
+                    <div class="property-card__info-header">
+                      <span style="font-size: large">Property name </span>
+                    </div>
                     <span>Address: ---</span>
                     <span style="color: rgb(193, 101, 62)">Date: ---</span>
                     <span>Visit duration: ---</span>
@@ -190,8 +194,8 @@
                     <button class="btn danger-outline delete-button" id="delete-property-button">
                       <i class="fa-solid fa-trash"></i>
                     </button>
-                    <button class="btn edit-outline edit-button">
-                      <i class="fa-solid fa-edit"></i>
+                    <button class="btn edit-outline edit-button" id="add-property-notes-button">
+                      <i class="fa-solid fa-book"></i>
                     </button>
                   </div>
                 </div>
@@ -200,92 +204,145 @@
             </div>
           </div>
         </div>
-        <div class="modal" id="add-property-modal">
-          <div class="modal-container">
-            <div class="modal-header">
-              <h1>Add property</h1>
-            </div>
-            <form class="modal-form">
-              <div class="modal-form__input">
-                <input
-                  type="text"
-                  name="property-name"
-                  id="property-name"
-                  placeholder="Property name"
-                />
-              </div>
-              <div class="modal-form__input">
-                <input
-                  type="text"
-                  name="property-address"
-                  id="property-address"
-                  placeholder="Property address"
-                />
-              </div>
-              <div class="modal-form__input">
-                <input
-                  type="date"
-                  name="property-date"
-                  id="property-date"
-                  placeholder="Property date"
-                />
-              </div>
-              <div class="modal-form__input">
-                De
-                <input
-                  type="time"
-                  name="property-time"
-                  id="property-time"
-                  placeholder="Property time"
-                />
-                A
-                <input
-                  type="time"
-                  name="property-time"
-                  id="property-time"
-                  placeholder="Property time"
-                />
-              </div>
-              <textarea
-                  name="property-notes"
-                  id="property-notes"
-                  cols="30"
-                  rows="10"
-                  placeholder="Notes"
-                ></textarea>
-            </form>
-            <div class="modal-buttons">
-              <button class="btn btn-primary" id="add-property">
-                Add
-                <i class="fa-solid fa-plus"></i>
-              </button>
-              <button class="btn btn-danger" id="close-add-property-modal-button">
-                Cancel
-                <i class="fa-solid fa-times"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="modal delete-property-modal" id="delete-property-modal">
-          <div class="modal-container" style="height: 300px;">
-            <div class="modal-header">
-              <h1>Delete property</h1>
-            </div>
-            <p>Are you sure you want to delete this property?</p>
-            <div class="modal-buttons">
-              <button class="btn btn-danger" id="delete-property">
-                Delete
-                <i class="fa-solid fa-trash"></i>
-              </button>
-              <button class="btn btn-primary" id="close-delete-property-modal-button">
-                Cancel
-                <i class="fa-solid fa-times"></i>
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </main>
+    <div class="modal" id="add-property-location-modal">
+      <div class="modal-container">
+        <div class="modal-map__header">
+          <h1>Add location</h1>
+        </div>
+        <div class="modal-map__map" id="add-property-map"></div>
+        <div class="modal-buttons">
+          <button class="btn btn-primary" id="add-property-location">
+            Add
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <button class="btn btn-danger" id="close-add-property-location-modal-button">
+            Cancel
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="add-property-modal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h1>Add property</h1>
+        </div>
+        <form class="modal-form">
+          <div class="modal-form__input">
+            <input
+              type="text"
+              name="property-name"
+              id="property-name"
+              placeholder="Property name"
+            />
+          </div>
+          <div class="modal-form__input">
+            <input
+              type="text"
+              name="property-address"
+              id="property-address"
+              placeholder="Property address"
+            />
+          </div>
+          <div class="modal-form__input">
+            <input
+              type="date"
+              name="property-date"
+              id="property-date"
+              placeholder="Property date"
+            />
+          </div>
+          <div class="modal-form__input">
+            <input type="number" name="property-time" id="property-time" />
+          </div>
+          <textarea
+              name="property-notes"
+              id="property-notes"
+              cols="30"
+              rows="10"
+              placeholder="Notes"
+            ></textarea>
+        </form>
+        <div class="modal-buttons">
+          <button class="btn btn-danger" id="close-add-property-modal-button">
+            Cancel
+            <i class="fa-solid fa-times"></i>
+          </button>
+          <button class="btn btn-primary" id="add-property">
+            Add
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal-notes" id="add-property-modal-notes">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h1>Add property note</h1>
+        </div>
+        <form class="modal-form">
+          <div class="modal-form__input">
+            <input
+              type="text"
+              name="property-note"
+              id="property-note"
+              placeholder="Note"
+            />
+          </div>
+        </form>
+        <div class="modal-buttons">
+          <button class="btn btn-danger" id="close-add-property-notes-modal-button">
+            Cancel
+            <i class="fa-solid fa-times"></i>
+          </button>
+          <button class="btn btn-primary" id="add-property-notes">
+            Add
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal delete-property-modal" id="delete-property-modal">
+      <div class="modal-container" style="height: 300px;">
+        <div class="modal-header">
+          <h1>Delete property</h1>
+        </div>
+        <p>Are you sure you want to delete this property?</p>
+        <div class="modal-buttons">
+          <button class="btn btn-primary" id="close-delete-property-modal-button">
+            Cancel
+            <i class="fa-solid fa-times"></i>
+          </button>
+          <button class="btn btn-danger" id="delete-property">
+            Delete
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal property-visited-modal" id="property-visited-modal">
+      <div class="modal-container" style="height: 300px;">
+        <div class="modal-header">
+          <h1>Check property as visited?</h1>
+        </div>
+        <p>
+          This will recalculate the travel time.</p>
+        <div class="modal-buttons">
+          <button class="btn btn-danger" id="close-check-property-modal-button">
+            Cancel
+            <i class="fa-solid fa-times"></i>
+          </button>
+          <button class="btn btn-primary" id="check-visited-property-button">
+            Visited
+            <i class="fa-solid fa-check"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>
